@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package userfile;
+
+service UserFileService {
+    rpc findUserFiles (UserById) returns (UserFiles);
+    rpc findTranslatedFileByFile (FileById) returns (TranslatedFiles);
+    rpc findTranslatedFile (FileById) returns (TranslatedFile);
+}
+
+message UserById {
+    int32  id = 1;
+}
+
+message TranslationFile {
+    string id = 1;
+    string filename = 2;
+    string filesize = 3;
+    string filepath = 4;
+    string status = 5;
+}
+
+message UserFiles {
+    repeated TranslationFile userfiles = 1;
+}
+
+message FileById {
+    string id = 1;
+}
+
+message TranslatedFile {
+    string id = 1;
+    string filename = 2;
+    string filesize = 3;
+    string filepath = 4;
+    string status = 5;
+    string version = 6;
+}
+
+message TranslatedFiles {
+    repeated TranslatedFile translatedfiles = 1;
+}

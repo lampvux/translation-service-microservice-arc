@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package translationfile;
+
+service TranslationFileService {
+    rpc getFile (FileById) returns (TranslationFile);    
+}
+
+message FileById {
+    string id = 1;
+}
+
+message TranslationFile {
+    string id = 1;
+    string filename = 2;
+    string filesize = 3;
+    string filepath = 4;
+    string status = 5;
+}

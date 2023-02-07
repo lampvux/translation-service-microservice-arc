@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package usermeta;
+
+service UserMetaService {
+    rpc findOne (UserById) returns (UserMeta);   
+}
+
+message UserById {
+    int32  id = 1;
+}
+
+message UserMeta {
+    int32 id = 1;
+    string username = 2;
+    string firstname = 3;
+    string lastname = 4;
+    string email = 5;
+}
+

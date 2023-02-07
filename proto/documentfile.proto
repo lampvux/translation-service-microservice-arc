@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package documentfile;
+
+service DocumentFileService {
+    rpc getFile (FileById) returns (DocumentFile);    
+}
+
+message FileById {
+    string id = 1;
+}
+
+message DocumentFile {
+    string id = 1;
+    string filename = 2;
+    string filesize = 3;
+    string filepath = 4;
+    string status = 5;
+}

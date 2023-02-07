@@ -1,0 +1,16 @@
+{
+  "name": "proto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ts-proto": "^1.112.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "grpc-build": "protoc  --plugin=./node_modules/.bin/protoc-gen-ts_proto.cmd  --ts_proto_out=./build *.proto --ts_proto_opt=outputEncodeMethods=false,outputJsonMethods=false,outputClientImpl=false",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
